@@ -3,162 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あなたの名前 - 自己紹介</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0; /* bodyのデフォルトマージンを削除 */
-            padding-top: 60px; /* 固定ヘッダーの高さ分、コンテンツを下にずらす */
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* 固定ヘッダーのスタイル */
-        .fixed-header {
-            position: fixed; /* 画面に固定 */
-            top: 0;          /* 上端に配置 */
-            left: 0;         /* 左端に配置 */
-            width: 100%;     /* 幅を100%に */
-            background-color: #0056b3; /* ヘッダーの背景色 */
-            color: white;    /* 文字色 */
-            padding: 10px 20px; /* 内側の余白 */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 影 */
-            z-index: 1000;   /* 他の要素より手前に表示 */
-            display: flex;   /* flexboxを使って要素を配置 */
-            justify-content: space-between; /* 要素を両端に配置 */
-            align-items: center; /* 垂直方向中央揃え */
-        }
-
-        .fixed-header h1 {
-            margin: 0; /* ヘッダー内のh1のデフォルトマージンを削除 */
-            font-size: 1.5em;
-        }
-
-        .fixed-header nav ul {
-            list-style: none; /* リストのマーカーを削除 */
-            margin: 0;
-            padding: 0;
-            display: flex; /* ナビゲーションリンクを横並びに */
-        }
-
-        .fixed-header nav ul li {
-            margin-left: 20px; /* 各リンクの間隔 */
-        }
-
-        .fixed-header nav ul li a {
-            color: white;
-            text-decoration: none; /* 下線を削除 */
-            font-weight: bold;
-        }
-
-        .fixed-header nav ul li a:hover {
-            text-decoration: underline; /* ホバー時に下線を表示 */
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px; /* ページ下部にも余白 */
-        }
-        h2 {
-            color: #0056b3;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .info-item {
-            margin-bottom: 10px;
-        }
-        .info-item strong {
-            display: inline-block;
-            width: 80px; /* ラベルの幅を固定して揃える */
-        }
-
-        /* ページの長さを意図的に長くするためのダミーコンテンツ */
-        .dummy-content {
-            height: 1000px; /* 高さを指定してスクロールを発生させる */
-            background-color: #e0e0e0;
-            margin-top: 30px;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            color: #555;
-        }
-        .dummy-content p {
-            margin-bottom: 15px;
-        }
-    </style>
+    <title>自己紹介</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="fixed-header">
-        <h1>あなたの名前</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">基本情報</a></li>
-                <li><a href="#career">経歴</a></li>
-                <li><a href="#contact">連絡先</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="header-content">
+            <h1>My Profile</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#profile">プロフィール</a></li>
+                    <li><a href="#history">経歴</a></li>
+                    <li><a href="#skills">スキル</a></li>
+                    <li><a href="#hobby">趣味</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <p>こんにちは！私の自己紹介ページへようこそ。</p>
+    <main>
+        <section id="profile" class="content-section">
+            <h2>プロフィール</h2>
+            <p>ここにあなたのプロフィール情報を記述します。</p>
+            <p>氏名: 山田 太郎 (Taro Yamada)</p>
+            <p>生年月日: 1990年1月1日</p>
+            <p>出身地: 東京都</p>
+            <p>自己紹介文:</p>
+            <p>はじめまして、山田太郎です。新しい技術を学ぶことと、それを使って何かを作り出すことに情熱を持っています。チームワークを大切にし、常に前向きな姿勢でプロジェクトに取り組むことを心がけています。趣味は週末のハイキングと読書です。どうぞよろしくお願いいたします。</p>
+            <div style="height: 300px;"></div> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div style="height: 200px;"></div>
+        </section>
 
-        <h2 id="about">基本情報</h2>
-        <div class="info-item">
-            <strong>名前:</strong> あなたの名前
-        </div>
-        <div class="info-item">
-            <strong>所属:</strong> あなたの所属部署や会社名
-        </div>
-        <div class="info-item">
-            <strong>役職:</strong> あなたの役職
-        </div>
-        <div class="info-item" id="contact">
-            <strong>連絡先:</strong> email@example.com (または他の連絡先)
-        </div>
+        <section id="history" class="content-section">
+            <h2>経歴</h2>
+            <p>ここにあなたの学歴や職歴を記述します。</p>
+            <h3>学歴</h3>
+            <ul>
+                <li>2008年3月 XX高等学校 卒業</li>
+                <li>2012年3月 XX大学 XX学部 卒業</li>
+            </ul>
+            <h3>職歴</h3>
+            <ul>
+                <li>2012年4月～2018年3月 株式会社ABC (システムエンジニア)</li>
+                <li>2018年4月～現在 株式会社XYZ (Webデベロッパー)</li>
+            </ul>
+            <p>職務経歴詳細:</p>
+            <p>株式会社ABCでは、主に金融機関向けのシステム開発に従事し、要件定義から設計、開発、テストまで一連の工程を担当しました。株式会社XYZに転職後は、フロントエンド技術を中心に、ユーザーインターフェースの改善や新規機能開発に携わっています。</p>
+            <div style="height: 400px;"></div> <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <div style="height: 250px;"></div>
+        </section>
 
-        <h2>経歴</h2>
-        <ul id="career">
-            <li><strong>20XX年4月:</strong> 大学A学部B学科 卒業</li>
-            <li><strong>20XX年4月:</strong> 株式会社C 入社 (システム開発部)</li>
-            <li><strong>20XX年10月:</strong> プロジェクトXに参画 (役割：フロントエンド開発)</li>
-            <li><strong>20YY年3月:</strong> 新製品Y開発プロジェクト リーダー</li>
-            <li><strong>20YY年9月:</strong> 株式会社Zへ転職 (サービス企画部)</li>
-            <li><strong>現在:</strong> 新規事業の企画・推進に従事</li>
-            <li><strong>20YY年12月:</strong> 〇〇プロジェクト完了</li>
-            <li><strong>20ZZ年4月:</strong> 新しい技術の習得を開始</li>
-            <li><strong>20ZZ年7月:</strong> 〇〇コミュニティに参加</li>
-            <li><strong>20ZZ年10月:</strong> 〇〇に関する発表を行う</li>
-            <li><strong>20AA年1月:</strong> 新たな役割に挑戦</li>
-            <li><strong>20AA年6月:</strong> チームビルディング活動を推進</li>
-            <li><strong>20AA年11月:</strong> 〇〇スキル認定を取得</li>
-            <li><strong>20BB年3月:</strong> 〇〇に関する書籍を執筆開始</li>
-            <li><strong>20BB年8月:</strong> 海外カンファレンスで発表</li>
-            <li><strong>20BB年12月:</strong> 最新技術の研究開発に従事</li>
-        </ul>
+        <section id="skills" class="content-section">
+            <h2>スキル</h2>
+            <p>ここにあなたの保有スキルを記述します。</p>
+            <h3>プログラミング言語</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript (React, Vue.js)</li>
+                <li>Python (Django, Flask)</li>
+                <li>Java</li>
+                <li>SQL</li>
+            </ul>
+            <h3>その他</h3>
+            <ul>
+                <li>Git, GitHub</li>
+                <li>Docker</li>
+                <li>AWS (EC2, S3, RDS)</li>
+                <li>英語 (TOEIC 800点)</li>
+            </ul>
+            <p>新しい技術の習得にも意欲的です。現在は機械学習について勉強中です。</p>
+            <div style="height: 350px;"></div> <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+            <div style="height: 150px;"></div>
+        </section>
 
-        <p>このページは適宜更新していきます。</p>
-    </div>
+        <section id="hobby" class="content-section">
+            <h2>趣味</h2>
+            <p>ここにあなたの趣味について記述します。</p>
+            <ul>
+                <li>週末のハイキング: 自然の中でリフレッシュするのが好きです。</li>
+                <li>読書: 特に歴史小説やSFを好んで読みます。</li>
+                <li>写真撮影: 風景写真を撮ることが多いです。</li>
+                <li>料理: 新しいレシピに挑戦するのが楽しみです。</li>
+            </ul>
+            <p>趣味を通じて得た経験や視点が、仕事にも活かせることがあると感じています。</p>
+            <div style="height: 500px;"></div> <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+            <div style="height: 300px;"></div>
+        </section>
 
-    <div class="container dummy-content">
-        <h2>さらに下に続くダミーコンテンツ</h2>
-        <p>この部分はページの長さを確保するためのダミーです。</p>
-        <p>スクロールして、ヘッダーが常に表示されることを確認してください。</p>
-        <p>このコンテンツは、あなたの自己紹介には含まれませんが、ウェブページの動作を確認するために役立ちます。</p>
-        <p>下方向へのスクロールを続けてください。</p>
-        <p>さらに続く内容...</p>
-        <p>ページ下部まで到達しました。</p>
-        <p>また上に戻るとヘッダーが固定されていることがわかります。</p>
-        <p>これでスクロールの挙動を十分に確認できるはずです。</p>
-        <p>（この部分は後で削除してください）</p>
-    </div>
+        <section id="contact" class="content-section">
+            <h2>お問い合わせ</h2>
+            <p>ご連絡はこちらまでお願いいたします。</p>
+            <p>Email: your.email@example.com</p>
+            <p>お気軽にご連絡ください。</p>
+            <div style="height: 600px;"></div> </section>
+    </main>
 
+    <footer>
+        <p>&copy; 2025 Your Name</p>
+    </footer>
 </body>
 </html>
