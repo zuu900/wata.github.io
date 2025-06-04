@@ -84,9 +84,10 @@ main {
 }
 
 .content-section {
-    padding: 30px 10px; /* セクション内のパディング調整 */
+    padding: 30px 10px;
     margin-bottom: 25px;
     border-bottom: 1px solid #eeeeee;
+    scroll-margin-top: 70px; /* ★★★ この行を追加 ★★★ (ヘッダーの高さに合わせて調整) */
 }
 
 .content-section:last-child {
