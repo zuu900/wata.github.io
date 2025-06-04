@@ -12,7 +12,7 @@ body {
     padding-top: 70px; /* 固定ヘッダーのためのパディング */
 
     /* ▼▼▼ 背景画像の指定を追加 ▼▼▼ */
-    background-image: url('background-image.jpg'); /* 'background-image.jpg' を実際の画像ファイル名やパスに置き換えてください */
+    background-image: url('background-image.png'); /* 'background-image.jpg' を実際の画像ファイル名やパスに置き換えてください */
                                                  /* 例: imagesフォルダ内なら url('images/background-image.jpg') */
     background-size: cover;          /* 画面全体を覆うように画像を拡大・縮小 (アスペクト比は維持) */
     background-position: center center;/* 画像を中央に配置 */
