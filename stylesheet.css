@@ -7,11 +7,20 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    /* 固定ヘッダーのためのパディング: ヘッダーの高さに応じて調整 */
-    /* JavaScriptで動的に設定するか、固定の高さを指定 */
-    padding-top: 70px; /* ヘッダーの高さ (例: 70px) */
+    /* background-color: #f4f4f4; */ /* ← 元の背景色はコメントアウトまたは削除してもOK */
+    color: #333; /* テキストの色。背景画像によっては調整が必要になる場合があります */
+    padding-top: 70px; /* 固定ヘッダーのためのパディング */
+
+    /* ▼▼▼ 背景画像の指定を追加 ▼▼▼ */
+    background-image: url('background-image.jpg'); /* 'background-image.jpg' を実際の画像ファイル名やパスに置き換えてください */
+                                                 /* 例: imagesフォルダ内なら url('images/background-image.jpg') */
+    background-size: cover;          /* 画面全体を覆うように画像を拡大・縮小 (アスペクト比は維持) */
+    background-position: center center;/* 画像を中央に配置 */
+    background-repeat: no-repeat;    /* 画像を繰り返さない */
+    background-attachment: fixed;    /* 背景画像をビューポートに固定 (スクロールしても背景は動かない) */
+                                     /* スクロールと一緒に動かす場合は 'scroll' またはこの行を削除 */
+    background-color: #cccccc;       /* 画像が読み込まれるまでの背景色や、画像が透明な場合の背景色 */
+    /* ▲▲▲ 背景画像の指定ここまで ▲▲▲ */
 }
 
 /* ヘッダー */
