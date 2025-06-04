@@ -3,15 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>あなたの名前 - 自己紹介</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
+            margin: 0; /* bodyのデフォルトマージンを削除 */
+            padding-top: 60px; /* 固定ヘッダーの高さ分、コンテンツを下にずらす */
             background-color: #f4f4f4;
             color: #333;
         }
+
+        /* 固定ヘッダーのスタイル */
+        .fixed-header {
+            position: fixed; /* 画面に固定 */
+            top: 0;          /* 上端に配置 */
+            left: 0;         /* 左端に配置 */
+            width: 100%;     /* 幅を100%に */
+            background-color: #0056b3; /* ヘッダーの背景色 */
+            color: white;    /* 文字色 */
+            padding: 10px 20px; /* 内側の余白 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 影 */
+            z-index: 1000;   /* 他の要素より手前に表示 */
+            display: flex;   /* flexboxを使って要素を配置 */
+            justify-content: space-between; /* 要素を両端に配置 */
+            align-items: center; /* 垂直方向中央揃え */
+        }
+
+        .fixed-header h1 {
+            margin: 0; /* ヘッダー内のh1のデフォルトマージンを削除 */
+            font-size: 1.5em;
+        }
+
+        .fixed-header nav ul {
+            list-style: none; /* リストのマーカーを削除 */
+            margin: 0;
+            padding: 0;
+            display: flex; /* ナビゲーションリンクを横並びに */
+        }
+
+        .fixed-header nav ul li {
+            margin-left: 20px; /* 各リンクの間隔 */
+        }
+
+        .fixed-header nav ul li a {
+            color: white;
+            text-decoration: none; /* 下線を削除 */
+            font-weight: bold;
+        }
+
+        .fixed-header nav ul li a:hover {
+            text-decoration: underline; /* ホバー時に下線を表示 */
+        }
+
         .container {
             max-width: 800px;
             margin: auto;
@@ -19,8 +63,9 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; /* ページ下部にも余白 */
         }
-        h1, h2 {
+        h2 {
             color: #0056b3;
         }
         ul {
@@ -34,16 +79,38 @@
             display: inline-block;
             width: 80px; /* ラベルの幅を固定して揃える */
         }
+
+        /* ページの長さを意図的に長くするためのダミーコンテンツ */
+        .dummy-content {
+            height: 1000px; /* 高さを指定してスクロールを発生させる */
+            background-color: #e0e0e0;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: #555;
+        }
+        .dummy-content p {
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header class="fixed-header">
         <h1>あなたの名前</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">基本情報</a></li>
+                <li><a href="#career">経歴</a></li>
+                <li><a href="#contact">連絡先</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
         <p>こんにちは！私の自己紹介ページへようこそ。</p>
 
-        ---
-
-        <h2>基本情報</h2>
+        <h2 id="about">基本情報</h2>
         <div class="info-item">
             <strong>名前:</strong> あなたの名前
         </div>
@@ -53,23 +120,45 @@
         <div class="info-item">
             <strong>役職:</strong> あなたの役職
         </div>
-        <div class="info-item">
+        <div class="info-item" id="contact">
             <strong>連絡先:</strong> email@example.com (または他の連絡先)
         </div>
 
-        ---
-
         <h2>経歴</h2>
-        <ul>
+        <ul id="career">
             <li><strong>20XX年4月:</strong> 大学A学部B学科 卒業</li>
             <li><strong>20XX年4月:</strong> 株式会社C 入社 (システム開発部)</li>
             <li><strong>20XX年10月:</strong> プロジェクトXに参画 (役割：フロントエンド開発)</li>
             <li><strong>20YY年3月:</strong> 新製品Y開発プロジェクト リーダー</li>
             <li><strong>20YY年9月:</strong> 株式会社Zへ転職 (サービス企画部)</li>
             <li><strong>現在:</strong> 新規事業の企画・推進に従事</li>
+            <li><strong>20YY年12月:</strong> 〇〇プロジェクト完了</li>
+            <li><strong>20ZZ年4月:</strong> 新しい技術の習得を開始</li>
+            <li><strong>20ZZ年7月:</strong> 〇〇コミュニティに参加</li>
+            <li><strong>20ZZ年10月:</strong> 〇〇に関する発表を行う</li>
+            <li><strong>20AA年1月:</strong> 新たな役割に挑戦</li>
+            <li><strong>20AA年6月:</strong> チームビルディング活動を推進</li>
+            <li><strong>20AA年11月:</strong> 〇〇スキル認定を取得</li>
+            <li><strong>20BB年3月:</strong> 〇〇に関する書籍を執筆開始</li>
+            <li><strong>20BB年8月:</strong> 海外カンファレンスで発表</li>
+            <li><strong>20BB年12月:</strong> 最新技術の研究開発に従事</li>
         </ul>
 
         <p>このページは適宜更新していきます。</p>
     </div>
+
+    <div class="container dummy-content">
+        <h2>さらに下に続くダミーコンテンツ</h2>
+        <p>この部分はページの長さを確保するためのダミーです。</p>
+        <p>スクロールして、ヘッダーが常に表示されることを確認してください。</p>
+        <p>このコンテンツは、あなたの自己紹介には含まれませんが、ウェブページの動作を確認するために役立ちます。</p>
+        <p>下方向へのスクロールを続けてください。</p>
+        <p>さらに続く内容...</p>
+        <p>ページ下部まで到達しました。</p>
+        <p>また上に戻るとヘッダーが固定されていることがわかります。</p>
+        <p>これでスクロールの挙動を十分に確認できるはずです。</p>
+        <p>（この部分は後で削除してください）</p>
+    </div>
+
 </body>
 </html>
