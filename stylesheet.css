@@ -9,75 +9,84 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    padding-top: 80px; /* 固定ヘッダーの高さ分だけパディングを追加 */
+    /* 固定ヘッダーのためのパディング: ヘッダーの高さに応じて調整 */
+    /* JavaScriptで動的に設定するか、固定の高さを指定 */
+    padding-top: 70px; /* ヘッダーの高さ (例: 70px) */
 }
 
 /* ヘッダー */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; /* ヘッダーを固定 */
+#main-header { /* IDセレクタで明確に指定 */
+    background-color: #2c3e50; /* 少し濃いめの青系に変更 */
+    color: #ffffff;
+    padding: 15px 0; /* 上下のパディングを少し増やす */
+    position: fixed;   /* ヘッダーをビューポートに固定 */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* 他の要素より手前に表示 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;     /* 他の要素より手前に表示 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ソフトな影 */
 }
 
-.header-content {
-    display: flex; /* タイトルとメニューを横並びにする */
-    justify-content: space-between; /* 両端に配置 */
-    align-items: center; /* 中央揃え（縦方向） */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.header-container {
+    display: flex;                 /* Flexboxを使用 */
+    justify-content: space-between;/* 両端揃え (タイトルが左、メニューが右) */
+    align-items: center;           /* 垂直方向中央揃え */
+    max-width: 1100px;             /* コンテンツの最大幅 */
+    margin: 0 auto;                /* 中央揃え */
+    padding: 0 20px;               /* 左右のパディング */
 }
 
-.header-content h1 {
+.site-title h1 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 1.7em; /* 少し調整 */
+    font-weight: bold;
 }
 
-/* メニューバー */
-.menu ul {
+/* メインメニュー (ヘッダー右側) */
+.main-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex; /* メニュー項目を横並びにする */
 }
 
-.menu ul li {
-    margin-left: 20px; /* メニュー項目間の余白 */
+.main-menu ul li {
+    margin-left: 25px; /* メニュー項目間の余白を少し広げる */
 }
 
-.menu ul li a {
-    color: #fff;
+.main-menu ul li:first-child {
+    margin-left: 0; /* 最初のメニュー項目には左マージンなし */
+}
+
+.main-menu ul li a {
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1em;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    font-size: 0.95em; /* 少し調整 */
+    padding: 8px 12px; /* パディングを調整 */
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.menu ul li a:hover,
-.menu ul li a:focus {
-    background-color: #555;
+.main-menu ul li a:hover,
+.main-menu ul li a:focus {
+    background-color: #1abc9c; /* ホバー時の背景色 (アクセントカラー) */
+    color: #ffffff;
 }
 
 /* メインコンテンツ */
 main {
-    max-width: 1000px;
-    margin: 20px auto; /* 上下のマージンはヘッダーとの調整のため削除してもよい */
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 960px; /* 少し調整 */
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* より自然な影 */
+    border-radius: 3px;
 }
 
 .content-section {
-    padding: 40px 20px;
-    margin-bottom: 30px; /* 各セクション間の余白 */
-    border-bottom: 1px solid #eee;
+    padding: 30px 10px; /* セクション内のパディング調整 */
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eeeeee;
 }
 
 .content-section:last-child {
@@ -85,43 +94,84 @@ main {
 }
 
 .content-section h2 {
-    color: #333;
+    color: #2c3e50; /* ヘッダーと合わせた色 */
     margin-top: 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #333;
-    display: inline-block; /* 下線がテキスト幅に合うように */
+    margin-bottom: 20px; /* 見出しと本文の間のマージン */
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1abc9c; /* アクセントカラーで下線 */
+    display: inline-block;
 }
+
+/* ダミー要素のスタイル（視認性のため、実際には不要） */
+.content-section div[style*="height"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #777;
+    border: 1px dashed #ccc;
+}
+
 
 /* フッター */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    margin-top: 30px; /* メインコンテンツとの間に余白 */
+    padding: 25px;
+    background-color: #2c3e50; /* ヘッダーと合わせた色 */
+    color: #bdc3c7; /* 少し明るいグレー */
+    margin-top: 40px;
+    font-size: 0.9em;
 }
 
-/* レスポンシブ対応（簡易的） */
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column; /* ヘッダー内の要素を縦並びに */
-        align-items: flex-start;
+    .header-container {
+        flex-direction: column; /* ヘッダー内要素を縦並びに */
+        align-items: flex-start; /* 左揃えに */
     }
 
-    .header-content h1 {
-        margin-bottom: 10px;
+    .site-title h1 {
+        margin-bottom: 10px; /* タイトルとメニューの間に余白 */
     }
 
-    .menu ul {
+    .main-menu ul {
         flex-direction: column; /* メニュー項目を縦並びに */
+        width: 100%; /* 幅を100%に */
     }
 
-    .menu ul li {
+    .main-menu ul li {
         margin-left: 0;
-        margin-bottom: 10px;
+        margin-bottom: 8px; /* メニュー項目間の余白 */
+        width: 100%; /* 幅を100%に */
+    }
+    .main-menu ul li a {
+        display: block; /* リンクをブロック要素にしてクリックしやすく */
+        text-align: left; /* テキストを左揃えに */
     }
 
+    /* ヘッダーの高さが変わる可能性があるので、bodyのpadding-topを調整 */
+    /* 固定値ではなくJavaScriptで動的に計算するのが理想的ですが、ここでは固定値を大きく取ります */
     body {
-        padding-top: 150px; /* ヘッダーの高さが変わるため調整 */
+        padding-top: 180px; /* ヘッダーが縦長になることを考慮した値 */
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title h1 {
+        font-size: 1.5em;
+    }
+    .main-menu ul li a {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+    main {
+        padding: 15px;
+        margin: 20px 10px; /* 左右のマージンを追加 */
+    }
+    .content-section h2 {
+        font-size: 1.4em;
+    }
+    body {
+        padding-top: 170px; /* さらに微調整 */
     }
 }
